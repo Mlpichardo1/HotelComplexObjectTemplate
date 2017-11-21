@@ -19,3 +19,15 @@ var hotel = {
     name: "CareerDevs Innt"
 }
 
+console.log(document.getElementById("radio").nodeName);
+console.log(document.getElementById("label").nodeName);
+
+for (var i = 0; i < hotel.rooms.length; i++) {
+   var radioBtn = document.createElement("INPUT");
+   radioBtn.setAttribute("type", "radio");
+   radioBtn.setAttribute("name", "roomType");
+   radioBtn.setAttribute("value", i);
+   radioBtn.setAttribute("id", "room" + i);
+   var radioLbl = document.createAttribute("LABEL");
+   radioLbl.innerHTML = hotel.rooms[i].name;
+}
