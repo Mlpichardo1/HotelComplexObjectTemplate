@@ -53,4 +53,19 @@ document.getElementById("reservationForm").onsubmit = function(event){
             return;
         }
         
+        var radios = document.getElementsByName("roomType");
+        var roomSelected = "";
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].checked) {
+            roomSelected = radios[i].value;    
+            break;
+        }
     }
+    
+    if(roomSelected =="") {
+        alert("Pick a room please.");
+        return;
+    }
+    
+    alert("You have reserved Room " + hotel.rooms[parseInt(roomSelected)].name + ".");
+}
